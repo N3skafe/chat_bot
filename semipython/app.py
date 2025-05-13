@@ -64,7 +64,7 @@ with gr.Blocks(title="Multi-Agent RAG System") as demo:
     gr.Markdown("# Multi-Agent RAG System with Ollama Models")
     
     with gr.Tab("Chat"):
-        chatbot = gr.Chatbot()
+        chatbot = gr.Chatbot(type='messages')
         msg = gr.Textbox(label="Message")
         clear = gr.Button("Clear")
         

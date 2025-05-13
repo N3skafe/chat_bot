@@ -6,9 +6,9 @@ description = "Multi-agent system using Ollama models with RAG capabilities"
 authors = ["Your Name <your.email@example.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<3.14"
 gradio = "^4.0.0"
-langchain = "^0.1.0"
+langchain = "^0.3.25"
 langgraph = "^0.0.20"
 chromadb = "^0.4.18"
 pypdf = "^3.15.1"

@@ -5,7 +5,7 @@ from app import demo
 
 def main():
     parser = argparse.ArgumentParser(description="Multi-Agent RAG System with Ollama Models")
-    parser.add_argument("--host", type=str, default="0.0.0.0", help="Host to run the Gradio app on")
+    parser.add_argument("--host", type=str, default="127.0.0.1", help="Host to run the Gradio app on")
     parser.add_argument("--port", type=int, default=7860, help="Port to run the Gradio app on")
     parser.add_argument("--debug", action="store_true", help="Run in debug mode")
     
