@@ -1,4 +1,4 @@
-from typing import TypedDict, Annotated, Sequence, Literal, Dict, Any, Optional
+from typing import List, Tuple, TypedDict, Annotated, Sequence, Literal, Dict, Any, Optional
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
