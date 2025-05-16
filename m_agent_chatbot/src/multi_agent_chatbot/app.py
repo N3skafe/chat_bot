@@ -1,10 +1,21 @@
+import sys
+import os
+# 현재 파일(app.py)의 절대 경로를 기준으로 상위 디렉토리(src)를 sys.path에 추가
+# __file__ 은 현재 실행 중인 스크립트의 경로입니다.
+# os.path.abspath(__file__) -> .../src/multi_agent_chatbot/app.py
+# os.path.dirname(os.path.abspath(__file__)) -> .../src/multi_agent_chatbot
+# os.path.dirname(os.path.dirname(os.path.abspath(__file__))) -> .../src
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from multi_agent_chatbot.agent_logic import run_graph
+from multi_agent_chatbot.rag_handler import process_and_embed_pdf, PDF_STORAGE_PATH
+
 import gradio as gr
 from PIL import Image
-import os
 from typing import List, Tuple, Optional
 
-from .agent_logic import run_graph
-from .rag_handler import process_and_embed_pdf, PDF_STORAGE_PATH
+# from .agent_logic import run_graph
+# from .rag_handler import process_and_embed_pdf, PDF_STORAGE_PATH
 
 # --- Gradio 인터페이스 ---
 def chat_interface(message: str, history: List[Tuple[str, str]], image_upload: Optional[Image.Image]):
@@ -82,9 +93,8 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
     user_input.submit(chat_interface, inputs=[user_input, chatbot, image_input], outputs=[user_input, chatbot, image_input])
     submit_button.click(chat_interface, inputs=[user_input, chatbot, image_input], outputs=[user_input, chatbot, image_input])
 
-
 def main():
     demo.launch(share = True) # Docker 등에서 실행 시 외부 접속 허용
 
-if __name__ == "__main__":
-    main()
+    if __name__ == "__main__":
+       main()
