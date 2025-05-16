@@ -7,7 +7,7 @@ TOKEN_CONTEXT_LENGTH = 4096
 
 # 모델 이름 정의 (Ollama에 pull된 모델명과 일치해야 함)
 MODEL_DEEPSEEK = "deepseek-r1:latest" # 코딩, 수학
-MODEL_LLAMA3 = "llama3:latest" # 복잡한 추론, 이미지 분석 (llava 사용 고려)
+MODEL_LLAMA3 = "llama3.2:latest" # 복잡한 추론, 이미지 분석 (llava 사용 고려)
 MODEL_GEMMA = "gemma:2b" # 일반 질문
 MODEL_EMBEDDING = "nomic-embed-text" # 임베딩용
 MODEL_IMAGE_ANALYSIS = "llava:7b" # 이미지 분석 전용 모델 (llama3가 미지원시)

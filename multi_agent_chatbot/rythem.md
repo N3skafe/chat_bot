@@ -6,7 +6,7 @@ Gradio, Ollama, LangChain, LangGraph, ChromaDB를 사용하여 구축된 멀티 
 
 -   **멀티 LLM 에이전트**:
     -   코딩/수학 문제: `deepseek-coder` (또는 유사 모델)
-    -   복잡한 추론: `llama3` (또는 유사 모델)
+    -   복잡한 추론: `llama3.2` (또는 유사 모델)
     -   일반 질문: `gemma:2b`
 -   **Ollama 연동**: 로컬에서 LLM 모델 실행
 -   **RAG (Retrieval Augmented Generation)**:

@@ -96,9 +96,11 @@ def get_rag_retriever(k: int = 5):
 def list_available_collections():
     """ 사용 가능한 ChromaDB 컬렉션 목록 (디버깅용) """
     client = Chroma(persist_directory=CHROMA_DB_PATH)
-    return client.list_collections()
+    chromadb_client = client._client
+    collection = chromadb_client.list_collections()
+    return [col.name for col in collection]
 
 # 초기화 시 기존 DB 로드 확인
 print(f"ChromaDB initialized. Available collections: {list_available_collections()}")
-if not any(col.name == "rag_collection" for col in list_available_collections()):
+if not any(col == "rag_collection" for col in list_available_collections()):
     print("Warning: 'rag_collection' not found. PDFs might need to be re-uploaded.")
